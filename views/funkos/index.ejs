@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNKO HQ</title>
+</head>
+<body>
+    <h1>Funko HQ</h1>
+        <ul>
+          <% funkos.forEach(function(f) { %>
+            <li>
+              <%= f.funko %>
+                - 
+              <%= f.done ? 'done' : 'not done' %>
+            </li>
+          <% }); %>
+        </ul>
+ </body>
+   
+</html>
