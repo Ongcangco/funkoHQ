@@ -12,10 +12,10 @@
         <a href="/">HOME</a>
         |
         <% if (user) { %>
-          <a href="/funkos"	<%- title === 'My Collection' ? 'class="active"' : '' %>>
+          <a href="/funkos/new"	<%- title === 'My Collection' ? 'class="active"' : '' %>>
           MY COLLECTION</a>
           |
-          <a href="/funkos/hub" <%- title === 'HUB' ? 'class="active"' : '' %>>FUNKO HUB</a>
+          <a href="/funkos/forum" <%- title === 'Forum' ? 'class="active"' : '' %>>FUNKO FORUM</a>
           |
           <a href="/logout">LOG OUT</a>
         <% } else { %>

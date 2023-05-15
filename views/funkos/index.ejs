@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>FUNKO HQ</title>
-</head>
-<body>
-    <h1>Funko HQ</h1>
-        <ul>
-          <% funkos.forEach(function(f) { %>
-            <li>
-              <%= f.funko %>
-                - 
-              <%= f.done ? 'done' : 'not done' %>
-            </li>
-          <% }); %>
-        </ul>
- </body>
-   
-</html>
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+     
+      <th>Name</th>
+      <th>Code</th>
+      <th>Release<br>Year</th>
+      <th>Value</th>
+     
+
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% funkos.forEach(function(f) { %>
+      <tr>
+        <td><%= f.name %></td>
+        <td><%= f.code %></td>
+        <td><%= f.releaseYear %></td>
+        <td><%= f.value %></td>
+        <td><a href="/funkos/<%= f.id %>">DETAILS</a></td>
+      </tr>
+    <% }); %> 
+
+<%- include('../partials/footer') %>
