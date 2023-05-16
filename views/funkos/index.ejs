@@ -8,10 +8,9 @@
       <th>Code</th>
       <th>Release<br>Year</th>
       <th>Value</th>
-     
-
+      
       <th></th>
-
+      
     </tr>
   </thead>
   <tbody>
@@ -21,8 +20,14 @@
         <td><%= f.code %></td>
         <td><%= f.releaseYear %></td>
         <td><%= f.value %></td>
-        <td><a href="/funkos/<%= f.id %>">DETAILS</a></td>
+        <td>
+          <form action="/funkos/<%= f._id %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">X</button>
+          </form>
+        </td>
       </tr>
-    <% }); %> 
-
+      <% }); %> 
+   
+      
 <%- include('../partials/footer') %>

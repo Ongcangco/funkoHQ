@@ -11,10 +11,18 @@ const funkoSchema = new Schema({
             return new Date().getFullYear();
         } 
     },
-    Value: {type: Number, required: true},
+    value: {type: Number, required: true},
 }, {
     timestamps: true,  
 });
 
+// module.exports = {
+//     deleteOne,
+// }
 
+// function deleteOne(Schema) {
+//     Schema = parseInt(Schema);
+//     const Schemax = funkos.findIndex (funko => funko.Schema === Schema);
+// }
 module.exports = mongoose.model('Funko', funkoSchema);
+    

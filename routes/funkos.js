@@ -12,6 +12,9 @@ router.post('/', funkosCtrl.create);
 //GET route for /funkos
 router.get('/', funkosCtrl.index)
 
+// DELETE /funkos
+router.delete('/:id', funkosCtrl.delete);
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');

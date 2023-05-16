@@ -4,6 +4,12 @@ module.exports = {
     new: newFunko,
     create,
     index,
+    delete: deleteFunko,
+};
+
+async function deleteFunko(req, res) {
+  await Funko.deleteOne({ _id: req.params.id})
+   res.redirect('/funkos')
 }
 
 function index(req, res) {
@@ -24,6 +30,14 @@ async function create(req, res) {
     
       }
     }
+    
+    async function index(req, res) {
+        res.render('funkos/index', {
+            title: 'My Collection',
+            funkos: await Funko.find({})
+        })
+    }
+
 
 function newFunko(req, res) {
     res.render('funkos/new', { 
