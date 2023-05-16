@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h2>Enter A Funko Pop</h2>
+<form action="/lists/new" method="POST">
+  <label>Name:
+    <input type="text" name="name">
+  </label><br>
+  <label>Code:
+    <input type="number" name="code">
+  </label><br>
+  <label>Release Year:
+    <input type="number" name="releaseYear">
+  </label><br>
+
+  <button type="submit">Add Funko</button>
+</form>
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>
