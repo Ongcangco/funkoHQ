@@ -6,11 +6,14 @@ module.exports = {
     index,
     delete: deleteFunko,
     comments,
+  
 };
 
-function comments(req, res) {
-    res.render('funkos/comments', {title: "comments"});
+async function comments(req, res) {
+    const funko = await Funko.findById(req.params.id)
+    res.render('funkos/comments', {title: "Buy/Sell/Trade Chat"});
 }
+
 
 async function deleteFunko(req, res) {
   await Funko.deleteOne({ _id: req.params.id})

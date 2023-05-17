@@ -15,7 +15,9 @@
     </tr>
   </thead>
   <tbody>
+    <% let total = 0 %>
     <% funkos.forEach(function(f) { %>
+      <% total += f.value %>
       <tr>
         <td><%= f.name %></td>
         <td><%= f.code %></td>
@@ -29,6 +31,9 @@
         </td>
       </tr>
       <% }); %> 
+    
+
+
   
       
 <%- include('../partials/footer') %>

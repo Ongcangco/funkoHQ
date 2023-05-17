@@ -14,6 +14,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var funkosRouter = require('./routes/funkos');
 var listsRouter = require('./routes/lists');
+var commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -45,6 +46,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/funkos', funkosRouter);
 app.use('/lists', listsRouter);
+app.use('/comments', commentsRouter);
 
 
 // catch 404 and forward to error handler

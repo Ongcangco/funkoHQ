@@ -4,14 +4,8 @@ module.exports = {
     new: newList,
     create,
     delete: deleteList,
-    show
    
 };
-
-async function show(req, res) {
-    await List.findById(req.params.id);
-    res.render('lists/:id', { title: 'Comments', list});
-}
 
 
 async function deleteList(req, res) {
@@ -23,10 +17,9 @@ async function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-    lists.push(req.body);
     try {
-        req.body.list = await List.create(req.body)
-        res.redirect('/new') 
+        await List.create(req.body)
+        res.redirect('/lists/new') 
     } catch (err) {}    
 }
 
