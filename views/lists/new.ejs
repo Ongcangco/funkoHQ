@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>Enter A Funko Pop</h2>
+<% if (user) { %>
 <form action="/lists/new" method="POST">
   <label>Name:
     <input type="text" name="name">
@@ -12,8 +13,46 @@
     <input type="number" name="releaseYear">
   </label><br>
 
-  <button type="submit">Add Funko</button>
+  <button type="submit">Add To Wish List</button>
 </form>
+
+
 <p><%= errorMsg %></p>
+
+
+<table id="list">
+    <thead>
+      <tr>
+       
+        <th>User</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Release<br>Year</th>
+        
+      </tr>
+    </thead>
+
+<% if(lists.length){ %>
+<tbody>
+    <% lists.forEach(function(l) { %>
+      <tr>
+        <td class="review-user"><img alt="avatar" src="<%= l.userAvatar %>" referrerpolicy="no-referrer" ><%= l.userName %></td>
+        <td><%= l.name %></td>
+        <td><%= l.code %></td>
+        <td><%= l.releaseYear %></td>
+        <td>
+          <form action="/lists/<%= l._id %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">X</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %> 
+    <% } %>
+<% } %>
+   
+
+
+
 
 <%- include('../partials/footer') %>

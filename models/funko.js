@@ -16,13 +16,6 @@ const funkoSchema = new Schema({
     timestamps: true,  
 });
 
-// module.exports = {
-//     deleteOne,
-// }
 
-// function deleteOne(Schema) {
-//     Schema = parseInt(Schema);
-//     const Schemax = funkos.findIndex (funko => funko.Schema === Schema);
-// }
 module.exports = mongoose.model('Funko', funkoSchema);
     

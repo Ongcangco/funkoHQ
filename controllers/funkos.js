@@ -31,10 +31,10 @@ async function create(req, res) {
       }
     }
     
-    async function index(req, res) {
-        res.render('funkos/index', {
-            title: 'My Collection',
-            funkos: await Funko.find({})
+async function index(req, res) {
+    res.render('funkos/index', {
+        title: 'My Collection',
+        funkos: await Funko.find({})
         })
     }
 
