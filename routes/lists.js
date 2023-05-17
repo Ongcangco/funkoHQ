@@ -3,9 +3,11 @@ const router = express.Router();
 const listsCtrl = require('../controllers/lists');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
+
+
 router.get('/new', ensureLoggedIn, listsCtrl.new);
 router.post('/new', ensureLoggedIn, listsCtrl.create);
-// router.get('/', listsCtrl.index);
 
+router.delete('/:id', listsCtrl.delete);
 
 module.exports = router;

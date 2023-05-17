@@ -3,15 +3,14 @@ const List = require('../models/list');
 module.exports = {
     new: newList,
     create,
+    delete: deleteList
    
 };
 
-
-
-
-
-
-
+async function deleteList(req, res) {
+    await List.deleteOne({ _id: req.params.id})
+     res.redirect('/lists/new')
+  }
 
 async function create(req, res) {
     req.body.user = req.user._id;
