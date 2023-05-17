@@ -5,7 +5,12 @@ module.exports = {
     create,
     index,
     delete: deleteFunko,
+    comments,
 };
+
+function comments(req, res) {
+    res.render('funkos/comments', {title: "comments"});
+}
 
 async function deleteFunko(req, res) {
   await Funko.deleteOne({ _id: req.params.id})
@@ -21,15 +26,17 @@ function index(req, res) {
 async function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
-      }
-      try {
+        }
+        try {
         await Funko.create(req.body);
         res.redirect('/funkos');
-      } catch (err) {
+        } catch (err) {
           res.render('funkos/new', { errorMsg: err.message, title: 'My Funko', } );
     
       }
     }
+    
+    
     
 async function index(req, res) {
     res.render('funkos/index', {

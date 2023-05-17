@@ -40,6 +40,7 @@
         <td><%= l.name %></td>
         <td><%= l.code %></td>
         <td><%= l.releaseYear %></td>
+        <td><a href="/funkos/<%= l.name %>/comments">COMMENT</a></td>
         <td>
           <form action="/lists/<%= l._id %>?_method=DELETE"
             class="delete-form" method="POST">

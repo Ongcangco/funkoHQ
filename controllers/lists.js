@@ -3,9 +3,16 @@ const List = require('../models/list');
 module.exports = {
     new: newList,
     create,
-    delete: deleteList
+    delete: deleteList,
+    show
    
 };
+
+async function show(req, res) {
+    await List.findById(req.params.id);
+    res.render('lists/:id', { title: 'Comments', list});
+}
+
 
 async function deleteList(req, res) {
     await List.deleteOne({ _id: req.params.id})

@@ -12,6 +12,8 @@ router.post('/', funkosCtrl.create);
 //GET route for /funkos
 router.get('/', funkosCtrl.index)
 
+router.get('/:name/comments', funkosCtrl.comments) 
+
 // DELETE /funkos
 router.delete('/:id', funkosCtrl.delete);
 
