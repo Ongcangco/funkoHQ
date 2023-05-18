@@ -1,4 +1,6 @@
 const Funko = require('../models/funko');
+const User = require('../models/user')
+const List = require('../models/list')
 
 module.exports = {
     new: newFunko,
@@ -10,8 +12,9 @@ module.exports = {
 };
 
 async function comments(req, res) {
-    const funko = await Funko.findById(req.params.id)
-    res.render('funkos/comments', {title: "Buy/Sell/Trade Chat"});
+    let comments = (await List.find({name: req.params.name})).map(lists => lists.comments);
+    comments = comments.flat();
+    res.render('funkos/comments', {title: "Buy/Sell/Trade Chat", comments, name: req.params.name});
 }
 
 
@@ -30,6 +33,8 @@ async function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
         }
+        const user = await User.findById(req.user._id)
+        req.body.user = user;
         try {
         await Funko.create(req.body);
         res.redirect('/funkos');

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 
 const commentSchema = new Schema ({
-    content: {type: String, required: true }, 
+    content: {type: String}, 
     }, {
     timestamps: true
     })
@@ -19,8 +19,14 @@ const funkoSchema = new Schema({
         } 
     },
     value: {type: Number, required: true},
-    comments: [commentSchema]
+    comments: [commentSchema],
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
 }, {
+
     timestamps: true,  
 });
 

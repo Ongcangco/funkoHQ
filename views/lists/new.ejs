@@ -21,16 +21,16 @@
 
 
 <table id="list">
+  <ul>
     <thead>
       <tr>
-       
         <th>User</th>
         <th>Name</th>
         <th>Code</th>
-        <th>Release<br>Year</th>
-        
+        <th>Release<br>Year</th> 
       </tr>
     </thead>
+  </ul>
 
 <% if(lists.length){ %>
 <tbody>
@@ -48,8 +48,10 @@
           </form>
         </td>
       </tr>
+    </tbody>
+  </table>    
     <% }); %> 
-    <% } %>
+  <% } %>
 <% } %>
    
 

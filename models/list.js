@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// 
+const commentSchema = new Schema ({
+    content: {type: String}, 
+    }, {
+    timestamps: true
+    })
 
 
 const listSchema = new Schema ({
@@ -13,6 +17,7 @@ const listSchema = new Schema ({
             return new Date().getFullYear();
         } 
     },
+    comments: [commentSchema],    
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

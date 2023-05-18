@@ -1,29 +1,19 @@
 <%- include('../partials/header') %>
 <br><br><h2>BUY SELL TRADE</h2>
   <label>Comment</label>
-  <form id="comment-form">
+  <form id="comment-form" action="/funkos/<%= name %>/comments" method="POST" >
   <textarea name="content"></textarea>
  
-  <input type="submit" name="Submit">
+  <button type="submit">Submit</button>
 </form>
 
-<% comments.forEach(function(c) { %>
-    <tr>
-      <td class="comment-user"><img alt="avatar" src="<%= l.userAvatar %>" referrerpolicy="no-referrer" ><%= l.userName %></td>
-      <td><%= l.name %></td>
-      <td><%= l.code %></td>
-      <td><%= l.releaseYear %></td>
-      <td><a href="/funkos/<%= l.name %>/comments">COMMENT</a></td>
-      <td>
-        <form action="/lists/<%= l._id %>?_method=DELETE"
-          class="delete-form" method="POST">
-          <button type="submit">X</button>
-        </form>
-      </td>
-    </tr>
+
+<%if(comments.length) { %>
+<% comments.forEach(c => { %>
+    <p><%= c.content %></p><br>
   <% }); %> 
-  <% } %>
-<% } %>
+  <%}%>
+ 
 
 
 

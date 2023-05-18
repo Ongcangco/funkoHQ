@@ -1,4 +1,4 @@
-const Funko = require('../models/funko');
+const List = require('../models/list');
 
 
 module.exports = {
@@ -6,12 +6,14 @@ module.exports = {
 }
 
 async function create (req, res) {
-    const funko = await Funko.findById(req.params.id);
-    funko.comments.push(req.body)
+    console.log(req.body);
+    const list = await List.find({name: req.params.name, user: req.user._id});
+    console.log(list[0])
+    list[0].comments.push(req.body);
     try {
-       await funko.save()  
+       await list[0].save()  
     } catch (err) {
 
     }
-    res.redirect(`/funkos/${funko._id}`)
+    res.redirect(`/funkos/${req.params.name}/comments`)
 }
