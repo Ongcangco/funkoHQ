@@ -1,8 +1,8 @@
 Funko HQ: an app that allows collectors to track their collection. It will have a list of items already in their collection that tracks value and the pops that they already do have. Another section of the app also allows for the users to create a whole different set of list that allows them to input items that they would like to have, where it would ultimately be like a buy/sell/trade area where other users could essentially have access to it and be able to chat with one another. 
 
-
 Technology: MongoDB, CSS, HTML, JS 
-Screen Shot 2023-05-19 at 9.36.14 AM.jpg
+
+(../../../Desktop/Screen%20Shot%202023-05-19%20at%209.35.49%20AM.png)
 
 
 Getting Started: The idea is an app that allows collectors to track their collection and to be able to talk/chat/buy/sell/trade with one another.
