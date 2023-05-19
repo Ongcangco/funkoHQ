@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
-<div class="container">
+<div id="New-Pop">
   <h2>Enter Your Funko Pop</h2>
   <form action="/funkos" method="POST">
   <label>Name:
     <input type="text" name="name">
   </label><br>
   <label>Code:
-    <input type="number" name="code">
+    <input type="text" name="code">
   </label><br>
   <label>Release Year:
-    <input type="number" name="releaseYear">
+    <input type="text" name="releaseYear">
   </label><br>
   <label>Value:
-    <input type="number" name="value">
+    <input type="text" name="value">
   </label><br>
   
   <button type="submit">Add Funko</button>

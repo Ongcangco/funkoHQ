@@ -5,7 +5,7 @@ const passport = require('passport');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log(req.user)
-  res.render('index', { title: 'Funko HQ' });
+  res.render('index', { title: 'Funko HQ Home Page' });
 });
 
 router.get('/auth/google', passport.authenticate(

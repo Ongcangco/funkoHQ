@@ -1,8 +1,15 @@
+* {
+  text-align: center;
+  }
+  
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: bisque;
+background-color: #080909;
+background-image: url("https://images.unsplash.com/photo-1607203694607-2fde6bb0724c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnVua28lMjBwb3B8ZW58MHx8MHx8&w=1000&q=80");
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-position: 50% 50%;
 }
+
 
 .login {
   display: flex;
@@ -45,9 +52,9 @@ nav{
 }
 
 .logo{
-  color:darkblue;
-  font-size: 28px;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #2fabce, 0 0 30px #4fbfd3, 0 0 40px #6bb6c3, 0 0 55px #1485ab, 0 0 75px #189bff, -9px -15px 0px rgba(206,89,55,0), -9px -15px 0px rgba(115,123,206,0);
 }
+
 span{
   color: lightseagreen;
 }
@@ -59,8 +66,17 @@ nav ul li{
 }
 
 nav ul li a{
-  color: darkblue;
+  color: rgb(78, 191, 225);
   font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: capitalize;
 }
 
 nav ul li a:hover{
@@ -80,12 +96,86 @@ nav ul li a:hover{
   height: 40px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+#New-Pop {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  align-items: center;
+
+}
+#comment-form *,
+#wish-list {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
   align-items: center;
 }
 
 
+label {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color:white;
+ 
+}
 
+button {
+  color:black;
+  border-radius: 10px;
+}
+
+#list {
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 80px;
+  font-family: Georgia, serif;
+  border: 6px solid #3cd3ed;
+  background-color: #7cd1d6;
+  width: 40%;
+  text-align: center;
+
+}
+
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 5px;
+  margin: -5px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+input[type=text]:focus, input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+ #chat-button *,
+#comment-box {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+}
+
+h2 {
+  color: white;
+}
+
+#delete-btn {
+  color: red;
+  font-size: 15px;
+}
+#collection-btn {
+  color: red;
+  font-size: 15px;
+}
 

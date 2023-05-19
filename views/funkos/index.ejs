@@ -4,14 +4,10 @@
   <table id="list">
   <thead>
     <tr>
-     
       <th>Name</th>
       <th>Code</th>
       <th>Release<br>Year</th>
       <th>Value</th>
-      
-      <th></th>
-      
     </tr>
   </thead>
   <tbody>
@@ -26,10 +22,11 @@
         <td>
           <form action="/funkos/<%= f._id %>?_method=DELETE"
             class="delete-form" method="POST">
-            <button type="submit">X</button>
+            <button id="collection-btn" type="submit">X</button>
           </form>
         </td>
       </tr>
+  
       <% }); %> 
     
 
